@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For you</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url(arcoiris.jpg);
+            backdrop-filter: blur(6px);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .heart{
+            font-size: 10rem;
+            animation: heart .7s infinite alternate linear ;
+        }
+
+        .heartFlash{
+            font-size: 10rem;
+            animation: heart .2s infinite alternate linear ;
+        }
+
+        @keyframes heart {
+            from {
+                transform: scale(.7);
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+
+        .button-flash{
+            background-color: rgb(143, 12, 12);
+            padding: 1rem;
+            border-radius: 50px;
+            border: 1px solid black;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .button-flash:hover{
+            background-color: rgb(184, 11, 11);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart" id="cora">
+        🖤
+    </div>
+    <div class="veo">
+        <button id="button-veo" class="button-flash">¿Qué me pasa cuando te veo?</button>
+    </div>
+    <script>
+        const cora = document.getElementById("cora");
+        const buttonVeo = document.getElementById("button-veo");
+
+        buttonVeo.addEventListener("click", () =>{
+            cora.classList.remove("heart");
+            cora.classList.add("heartFlash");
+        })
+    </script>
+</body>
+</html>
